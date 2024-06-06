@@ -26,12 +26,13 @@ namespace game_of_life_msforms
             buforPlanszy = new bool[szerokoscPlanszy, wysokoscPlanszy];
 
             InitializePlansza();
-            //timer1 = new System.Windows.Forms.Timer();
-
 
             timer1.Interval = (int)numericUpDown1.Value;
             timer1.Tick += timer1_Tick;
             pictureBox1.Paint += pictureBox1_Paint;
+
+            pictureBox1.MouseDown += pictureBox1_MouseDown;
+            pictureBox1.MouseMove += pictureBox1_MouseMove;
         }
 
 
@@ -120,7 +121,7 @@ namespace game_of_life_msforms
                 {
                     Brush b = plansza[i, j] ? Brushes.Black : Brushes.White;
                     g.FillRectangle(b, i * wielkoscKomorki, j * wielkoscKomorki, wielkoscKomorki, wielkoscKomorki);
-                    //g.DrawRectangle(Pens.Gray, i * wielkoscKomorki, j * wielkoscKomorki, wielkoscKomorki, wielkoscKomorki);
+                    g.DrawRectangle(Pens.LightGray, i * wielkoscKomorki, j * wielkoscKomorki, wielkoscKomorki, wielkoscKomorki);
                 }
             }
         }
@@ -156,6 +157,31 @@ namespace game_of_life_msforms
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             timer1.Interval = (int)numericUpDown1.Value;
+        }
+
+        private void zmienStanKomorki(int mouseX, int mouseY)
+        {
+            int komorkaX = mouseX / wielkoscKomorki;
+            int komorkaY = mouseY / wielkoscKomorki;
+
+            if(komorkaX >= 0 && komorkaX < szerokoscPlanszy && komorkaY >= 0 && komorkaY < szerokoscPlanszy)
+            {
+                plansza[komorkaX, komorkaY] = !plansza[komorkaX, komorkaY];
+                pictureBox1.Invalidate();
+            }
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            zmienStanKomorki(e.X, e.Y);
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left) 
+            {
+                zmienStanKomorki(e.X, e.Y);
+            }
         }
     }
 }
