@@ -6,7 +6,7 @@ namespace game_of_life_msforms
 {
     public partial class Form1 : Form
     {
-        private const int wielkoscKomorki = 10;
+        private int wielkoscKomorki;
         private int szerokoscPlanszy;
         private int wysokoscPlanszy;
         private bool[,] plansza;
@@ -20,6 +20,8 @@ namespace game_of_life_msforms
         public Form1()
         {
             InitializeComponent();
+
+            wielkoscKomorki = trackBar1.Value;
 
             szerokoscPlanszy = pictureBox1.Width / wielkoscKomorki;
             wysokoscPlanszy = pictureBox1.Height / wielkoscKomorki;
@@ -36,6 +38,8 @@ namespace game_of_life_msforms
 
             pictureBox1.MouseDown += pictureBox1_MouseDown;
             pictureBox1.MouseMove += pictureBox1_MouseMove;
+
+            trackBar1.ValueChanged += TrackBar1_ValueChanged;
         }
 
 
@@ -199,6 +203,14 @@ namespace game_of_life_msforms
 
                 pictureBox1.Invalidate();
             }
+        }
+
+        private void TrackBar1_ValueChanged(object? sender, EventArgs e)
+        {
+            wielkoscKomorki = trackBar1.Value;
+            szerokoscPlanszy = pictureBox1.Width / wielkoscKomorki;
+            wysokoscPlanszy = pictureBox1.Height / wielkoscKomorki;
+            pictureBox1.Invalidate();
         }
     }
 }
