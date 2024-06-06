@@ -7,22 +7,34 @@ namespace game_of_life_msforms
     public partial class Form1 : Form
     {
         private const int wielkoscKomorki = 10;
-        private const int szerokoscPlanszy = 50;
-        private const int wysokoscPlanszy = 50;
+        private int szerokoscPlanszy;
+        private int wysokoscPlanszy;
+        private bool[,] plansza;
+        private bool[,] buforPlanszy;
 
-        private bool[,] plansza = new bool[szerokoscPlanszy, wysokoscPlanszy];
-        private bool[,] buforPlanszy = new bool[szerokoscPlanszy, wysokoscPlanszy];
+
 
         //private System.Windows.Forms.Timer timer1;
 
         public Form1()
         {
             InitializeComponent();
+
+            szerokoscPlanszy = pictureBox1.Width / wielkoscKomorki;
+            wysokoscPlanszy = pictureBox1.Height / wielkoscKomorki;
+            plansza = new bool[szerokoscPlanszy, wysokoscPlanszy];
+            buforPlanszy = new bool[szerokoscPlanszy, wysokoscPlanszy];
+
             InitializePlansza();
-            timer1 = new System.Windows.Forms.Timer();
-            timer1.Interval = 100;
+            //timer1 = new System.Windows.Forms.Timer();
+
+
+            timer1.Interval = (int)numericUpDown1.Value;
             timer1.Tick += timer1_Tick;
+            pictureBox1.Paint += pictureBox1_Paint;
         }
+
+
 
         private void InitializePlansza()
         {
@@ -35,11 +47,21 @@ namespace game_of_life_msforms
                 }
             }
         }
+        private void ClearPlansza()
+        {
+            for (int i = 0; i < szerokoscPlanszy; i++)
+            {
+                for (int j = 0; j < wysokoscPlanszy; j++)
+                {
+                    plansza[i, j] = false;
+                }
+            }
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             aktualizujPlansze();
-            panel1.Invalidate();
+            pictureBox1.Invalidate();
         }
 
         private void aktualizujPlansze()
@@ -88,7 +110,7 @@ namespace game_of_life_msforms
             return zlicz;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
 
@@ -98,14 +120,42 @@ namespace game_of_life_msforms
                 {
                     Brush b = plansza[i, j] ? Brushes.Black : Brushes.White;
                     g.FillRectangle(b, i * wielkoscKomorki, j * wielkoscKomorki, wielkoscKomorki, wielkoscKomorki);
-                    g.DrawRectangle(Pens.Gray, i * wielkoscKomorki, j * wielkoscKomorki, wielkoscKomorki, wielkoscKomorki);
+                    //g.DrawRectangle(Pens.Gray, i * wielkoscKomorki, j * wielkoscKomorki, wielkoscKomorki, wielkoscKomorki);
                 }
             }
         }
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            timer1.Start();
+            if (timer1.Enabled)
+            {
+                timer1.Stop();
+                startButton.Text = "Start";
+            }
+            else
+            {
+                timer1.Interval = (int)numericUpDown1.Value;
+                timer1.Start();
+                startButton.Text = "Stop";
+            }
+        }
+
+        private void randomButton_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            InitializePlansza();
+            pictureBox1.Invalidate();
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            ClearPlansza();
+            pictureBox1.Invalidate();
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            timer1.Interval = (int)numericUpDown1.Value;
         }
     }
 }

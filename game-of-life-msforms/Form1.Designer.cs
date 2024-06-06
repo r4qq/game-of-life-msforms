@@ -29,26 +29,24 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            panel1 = new Panel();
             startButton = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
+            pictureBox1 = new PictureBox();
+            numericUpDown1 = new NumericUpDown();
+            randomButton = new Button();
+            clearButton = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = SystemColors.ActiveBorder;
-            panel1.Location = new Point(18, 18);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1271, 737);
-            panel1.TabIndex = 0;
             // 
             // startButton
             // 
-            startButton.Location = new Point(1177, 793);
+            startButton.Location = new Point(943, 627);
+            startButton.Margin = new Padding(2);
             startButton.Name = "startButton";
-            startButton.Size = new Size(112, 34);
+            startButton.Size = new Size(90, 27);
             startButton.TabIndex = 1;
-            startButton.Text = "start";
+            startButton.Text = "Start";
             startButton.UseVisualStyleBackColor = true;
             startButton.Click += startButton_Click;
             // 
@@ -56,23 +54,70 @@
             // 
             timer1.Tick += timer1_Tick;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1020, 570);
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(792, 628);
+            numericUpDown1.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(106, 27);
+            numericUpDown1.TabIndex = 3;
+            numericUpDown1.Value = new decimal(new int[] { 100, 0, 0, 0 });
+            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
+            // 
+            // randomButton
+            // 
+            randomButton.Location = new Point(651, 598);
+            randomButton.Name = "randomButton";
+            randomButton.Size = new Size(94, 29);
+            randomButton.TabIndex = 4;
+            randomButton.Text = "Losowo";
+            randomButton.UseVisualStyleBackColor = true;
+            randomButton.Click += randomButton_Click;
+            // 
+            // clearButton
+            // 
+            clearButton.Location = new Point(651, 643);
+            clearButton.Name = "clearButton";
+            clearButton.Size = new Size(94, 29);
+            clearButton.TabIndex = 5;
+            clearButton.Text = "Czysc";
+            clearButton.UseVisualStyleBackColor = true;
+            clearButton.Click += clearButton_Click;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(1305, 866);
+            ClientSize = new Size(1044, 693);
+            Controls.Add(clearButton);
+            Controls.Add(randomButton);
+            Controls.Add(numericUpDown1);
+            Controls.Add(pictureBox1);
             Controls.Add(startButton);
-            Controls.Add(panel1);
+            Margin = new Padding(2);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel1;
         private Button startButton;
         private System.Windows.Forms.Timer timer1;
+        private PictureBox pictureBox1;
+        private NumericUpDown numericUpDown1;
+        private Button randomButton;
+        private Button clearButton;
     }
 }
