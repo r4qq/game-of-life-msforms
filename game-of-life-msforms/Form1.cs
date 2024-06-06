@@ -11,6 +11,7 @@ namespace game_of_life_msforms
         private int wysokoscPlanszy;
         private bool[,] plansza;
         private bool[,] buforPlanszy;
+        private Color kolor;
 
 
 
@@ -24,6 +25,8 @@ namespace game_of_life_msforms
             wysokoscPlanszy = pictureBox1.Height / wielkoscKomorki;
             plansza = new bool[szerokoscPlanszy, wysokoscPlanszy];
             buforPlanszy = new bool[szerokoscPlanszy, wysokoscPlanszy];
+
+            kolor = Color.Black;
 
             InitializePlansza();
 
@@ -119,7 +122,8 @@ namespace game_of_life_msforms
             {
                 for (int j = 0; j < wysokoscPlanszy; j++)
                 {
-                    Brush b = plansza[i, j] ? Brushes.Black : Brushes.White;
+                    SolidBrush custom = new SolidBrush(kolor);
+                    Brush b = plansza[i, j] ? custom : Brushes.White;
                     g.FillRectangle(b, i * wielkoscKomorki, j * wielkoscKomorki, wielkoscKomorki, wielkoscKomorki);
                     g.DrawRectangle(Pens.LightGray, i * wielkoscKomorki, j * wielkoscKomorki, wielkoscKomorki, wielkoscKomorki);
                 }
@@ -164,7 +168,7 @@ namespace game_of_life_msforms
             int komorkaX = mouseX / wielkoscKomorki;
             int komorkaY = mouseY / wielkoscKomorki;
 
-            if(komorkaX >= 0 && komorkaX < szerokoscPlanszy && komorkaY >= 0 && komorkaY < szerokoscPlanszy)
+            if (komorkaX >= 0 && komorkaX < szerokoscPlanszy && komorkaY >= 0 && komorkaY < szerokoscPlanszy)
             {
                 plansza[komorkaX, komorkaY] = !plansza[komorkaX, komorkaY];
                 pictureBox1.Invalidate();
@@ -178,9 +182,22 @@ namespace game_of_life_msforms
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Left) 
+            if (e.Button == MouseButtons.Left)
             {
                 zmienStanKomorki(e.X, e.Y);
+            }
+        }
+
+        private void kolorButton_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                kolor = colorDialog1.Color;
+
+                label1.BackColor = kolor;
+                label1.Text = kolor.Name;
+
+                pictureBox1.Invalidate();
             }
         }
     }
