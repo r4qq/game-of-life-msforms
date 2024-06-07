@@ -29,6 +29,7 @@ namespace game_of_life_msforms
             buforPlanszy = new bool[szerokoscPlanszy, wysokoscPlanszy];
 
             kolor = Color.Black;
+            startButton.BackColor = Color.Green;
 
             InitializePlansza();
 
@@ -140,12 +141,14 @@ namespace game_of_life_msforms
             {
                 timer1.Stop();
                 startButton.Text = "Start";
+                startButton.BackColor = Color.Green;
             }
             else
             {
                 timer1.Interval = (int)numericUpDown1.Value;
                 timer1.Start();
                 startButton.Text = "Stop";
+                startButton.BackColor = Color.Red;
             }
         }
 
