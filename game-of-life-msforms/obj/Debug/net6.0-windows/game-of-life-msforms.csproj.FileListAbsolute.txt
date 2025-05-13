@@ -47,3 +47,20 @@ C:\Users\r4qq\Desktop\amw\sem2\grafikakomp\projekt\game-of-life-msforms — kopi
 C:\Users\r4qq\Desktop\amw\sem2\grafikakomp\projekt\game-of-life-msforms — kopia\game-of-life-msforms\obj\Debug\net6.0-windows\game-of-life-msforms.pdb
 C:\Users\r4qq\Desktop\amw\sem2\grafikakomp\projekt\game-of-life-msforms — kopia\game-of-life-msforms\obj\Debug\net6.0-windows\game-of-life-msforms.genruntimeconfig.cache
 C:\Users\r4qq\Desktop\amw\sem2\grafikakomp\projekt\game-of-life-msforms — kopia\game-of-life-msforms\obj\Debug\net6.0-windows\ref\game-of-life-msforms.dll
+C:\Users\r4qq\Desktop\projekty\msforms\game-of-life-msforms\game-of-life-msforms\bin\Debug\net6.0-windows\game-of-life-msforms.exe
+C:\Users\r4qq\Desktop\projekty\msforms\game-of-life-msforms\game-of-life-msforms\bin\Debug\net6.0-windows\game-of-life-msforms.deps.json
+C:\Users\r4qq\Desktop\projekty\msforms\game-of-life-msforms\game-of-life-msforms\bin\Debug\net6.0-windows\game-of-life-msforms.runtimeconfig.json
+C:\Users\r4qq\Desktop\projekty\msforms\game-of-life-msforms\game-of-life-msforms\bin\Debug\net6.0-windows\game-of-life-msforms.dll
+C:\Users\r4qq\Desktop\projekty\msforms\game-of-life-msforms\game-of-life-msforms\bin\Debug\net6.0-windows\game-of-life-msforms.pdb
+C:\Users\r4qq\Desktop\projekty\msforms\game-of-life-msforms\game-of-life-msforms\obj\Debug\net6.0-windows\game_of_life_msforms.Form1.resources
+C:\Users\r4qq\Desktop\projekty\msforms\game-of-life-msforms\game-of-life-msforms\obj\Debug\net6.0-windows\game-of-life-msforms.csproj.GenerateResource.cache
+C:\Users\r4qq\Desktop\projekty\msforms\game-of-life-msforms\game-of-life-msforms\obj\Debug\net6.0-windows\game-of-life-msforms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\r4qq\Desktop\projekty\msforms\game-of-life-msforms\game-of-life-msforms\obj\Debug\net6.0-windows\game-of-life-msforms.AssemblyInfoInputs.cache
+C:\Users\r4qq\Desktop\projekty\msforms\game-of-life-msforms\game-of-life-msforms\obj\Debug\net6.0-windows\game-of-life-msforms.AssemblyInfo.cs
+C:\Users\r4qq\Desktop\projekty\msforms\game-of-life-msforms\game-of-life-msforms\obj\Debug\net6.0-windows\game-of-life-msforms.csproj.CoreCompileInputs.cache
+C:\Users\r4qq\Desktop\projekty\msforms\game-of-life-msforms\game-of-life-msforms\obj\Debug\net6.0-windows\game-of-life-msforms.sourcelink.json
+C:\Users\r4qq\Desktop\projekty\msforms\game-of-life-msforms\game-of-life-msforms\obj\Debug\net6.0-windows\game-of-life-msforms.dll
+C:\Users\r4qq\Desktop\projekty\msforms\game-of-life-msforms\game-of-life-msforms\obj\Debug\net6.0-windows\refint\game-of-life-msforms.dll
+C:\Users\r4qq\Desktop\projekty\msforms\game-of-life-msforms\game-of-life-msforms\obj\Debug\net6.0-windows\game-of-life-msforms.pdb
+C:\Users\r4qq\Desktop\projekty\msforms\game-of-life-msforms\game-of-life-msforms\obj\Debug\net6.0-windows\game-of-life-msforms.genruntimeconfig.cache
+C:\Users\r4qq\Desktop\projekty\msforms\game-of-life-msforms\game-of-life-msforms\obj\Debug\net6.0-windows\ref\game-of-life-msforms.dll

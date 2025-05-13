@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("game-of-life-msforms")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09283fba06fb0a5eee459a89effbbf74533f6178")]
 [assembly: System.Reflection.AssemblyProductAttribute("game-of-life-msforms")]
 [assembly: System.Reflection.AssemblyTitleAttribute("game-of-life-msforms")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
